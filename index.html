@@ -73,9 +73,7 @@
     const y = document.querySelector('#y');
     const z = document.querySelector('#z');
     const resize= document.querySelector('#resize')
-    resize.addEventListener('click', () => {
-          modelViewerTransform.resizeModel();
-          });
+   
     
     a=10;
     b=10;
@@ -88,7 +86,9 @@
     const updateScale = () => {
           modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
         };
-    
+     resize.addEventListener('click', () => {
+          modelViewerTransform.resizeModel();
+          });
     x.addEventListener('input', () => {
   updateScale();
 });
