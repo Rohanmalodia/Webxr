@@ -34,7 +34,11 @@
                   alt="A 3D model of an apartment"
                   shadow-intensity="1"
                   camera-controls
+                  interaction="interaction"
                   auto-rotate ar>
+      <div class="controls">
+        
+      </div>
     </model-viewer>
     <section class="attribution">
       <span>
@@ -57,6 +61,8 @@
   <!-- Loads <model-viewer> for modern browsers: -->
   <script type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    const modelViewerTransform = document.querySelector("model-viewer#transform");
+    modelViewerTransform.scale = `${3} ${3} ${3}`;
   </script>
 
   <!-- Loads <model-viewer> for old browsers like IE11: -->
