@@ -40,9 +40,9 @@
       <div class="controls">
         <button id="resize" >Rescale Model</button>
          <div>
-      Scale: X: <input id="x" value="1" size="3" class="number">, 
-      Y: <input id="y" value="1" size="3" class="number">, 
-      Z: <input id="z" value="1" size="3" class="number">
+      Scale: X: <input id="x" value="3" size="3" class="number">, 
+      Y: <input id="y" value="3" size="3" class="number">, 
+      Z: <input id="z" value="3" size="3" class="number">
     </div>
           <div>
       
@@ -79,9 +79,7 @@
     b=10;
     c=10;
      const resizeModel = () => {
-          x.value=10;
-          y.value=10;
-          z.value=10;
+          modelViewerTransform.scale = `${10} ${10} ${10}`;
         };
     const updateScale = () => {
           modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
