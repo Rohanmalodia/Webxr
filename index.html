@@ -38,7 +38,11 @@
                   interaction="interaction"
                   auto-rotate ar>
       <div class="controls">
-        
+          <div>
+      Scale: X: <input id="x" value="1" size="3" class="number">, 
+      Y: <input id="y" value="1" size="3" class="number">, 
+      Z: <input id="z" value="1" size="3" class="number">
+    </div>
       </div>
     </model-viewer>
     <section class="attribution">
@@ -65,8 +69,18 @@
   </script>
   <script>
     const modelViewerTransform = document.querySelector("model-viewer#transform");
-    modelViewerTransform.scale = `${5} ${5} ${5}`;
+    const updateScale = () => {
+  modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
 };
+    x.addEventListener('input', () => {
+  updateScale();
+});
+y.addEventListener('input', () => {
+  updateScale();
+});
+z.addEventListener('input', () => {
+  updateScale();
+});
   </script>
 
   <!-- Loads <model-viewer> for old browsers like IE11: -->
