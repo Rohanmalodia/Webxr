@@ -39,9 +39,7 @@
                   auto-rotate ar>
       <div class="controls">
           <div>
-      Scale: X: <input id="x" value="1" size="3" class="number">, 
-      Y: <input id="y" value="1" size="3" class="number">, 
-      Z: <input id="z" value="1" size="3" class="number">
+      <button id="resize" >Rescale Model</button>
     </div>
       </div>
     </model-viewer>
@@ -65,19 +63,15 @@
   </script>
   <script>
     const modelViewerTransform = document.querySelector("model-viewer#transform");
-    modelViewerTransform.scale = `${25} ${25} ${25}`;
+    const resize= document.querySelector('#resize')
+    resize.addEventListener('click', () => {
+          modelViewerTransform.updateScale();
+          });
+    
+    
     const updateScale = () => {
-  modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
-};
-    x.addEventListener('input', () => {
-  updateScale();
-});
-y.addEventListener('input', () => {
-  updateScale();
-});
-z.addEventListener('input', () => {
-  updateScale();
-});
+          modelViewerTransform.scale = `${10} ${10} ${10}`;
+        };
   </script>
 
   <!-- Loads <model-viewer> for old browsers like IE11: -->
