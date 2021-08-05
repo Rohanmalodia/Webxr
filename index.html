@@ -38,8 +38,10 @@
                   interaction="interaction"
                   auto-rotate ar>
       <div class="controls">
+        <button id="resize" >Rescale Model</button>
+        
           <div>
-      <button id="resize" >Rescale Model</button>
+      
     </div>
       </div>
     </model-viewer>
@@ -68,9 +70,11 @@
           modelViewerTransform.updateScale();
           });
     
-    
+    x=10;
+    y=10;
+    z=10;
     const updateScale = () => {
-          modelViewerTransform.scale = `${10} ${10} ${10}`;
+          modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
         };
   </script>
 
