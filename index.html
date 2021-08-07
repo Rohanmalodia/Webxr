@@ -33,6 +33,8 @@
                   ios-src="https://raw.githack.com/Rohanmalodia/Webxr/main/assets/coffeeshop.usdz"
                   poster="https://raw.githack.com/Rohanmalodia/Webxr/main/assets/coffeeshop.png"
                   alt="A 3D model of a coffee shop"
+                  roughness="0.6"
+                  scale= `${10} ${10} ${10}`
                   shadow-intensity="1.5"
                   camera-controls
                   interaction="interaction"
@@ -69,7 +71,8 @@
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
   </script>
   <script>
-    const modelViewerTransform = document.querySelector("model-viewer#transform");
+    const modelViewerTransform = document.querySelector("model-viewer#transform");  
+    let material = modelViewerTransform.model.materials[0];
     const resize= document.querySelector('#resize');
 
      const resizeModel = () => {
