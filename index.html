@@ -33,8 +33,7 @@
                   ios-src="https://raw.githack.com/Rohanmalodia/Webxr/main/assets/coffeeshop.usdz"
                   poster="https://raw.githack.com/Rohanmalodia/Webxr/main/assets/coffeeshop.png"
                   alt="A 3D model of a coffee shop"
-                  roughness="0.6"
-                  scale= 10
+                  scale="${5} ${5} ${5}"
                   shadow-intensity="1.5"
                   camera-controls
                   interaction="interaction"
@@ -72,7 +71,8 @@
   </script>
   <script>
     const modelViewerTransform = document.querySelector("model-viewer#transform");  
-    let material = modelViewerTransform.model.materials[0];
+    const [material] = modelViewerTransform.model.materials;
+    material.pbrMetallicRoughness.setRoughnessFactor(0.6);
     const resize= document.querySelector('#resize');
 
      const resizeModel = () => {
